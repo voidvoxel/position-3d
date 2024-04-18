@@ -1,4 +1,12 @@
 class Position3D {
+    static copy (
+        srcPosition,
+        destPosition
+    ) {
+        destPosition.from(srcPosition);
+    }
+
+
     static from (data) {
         return new Position3D().from(data);
     }
