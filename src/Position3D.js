@@ -50,7 +50,10 @@ class Position3D {
         if (typeof position === 'number') {
             this._fromValues(position);
         } else if (typeof position === 'object') {
-            if (position instanceof Array) {
+            if (position instanceof Position3D) {
+                this._fromValues(position.x, position.y, position.z);
+            }
+            else if (position instanceof Array) {
                 this._fromValues(...position);
             } else if (position.hasOwnProperty('x')) {
                 this.x
