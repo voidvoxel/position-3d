@@ -17,6 +17,11 @@ class Position3D {
     }
 
 
+    static toArray (position) {
+        return position.toArray();
+    }
+
+
     static zero () {
         return new Position3D(0);
     }
@@ -79,6 +84,15 @@ class Position3D {
         }
 
         return this;
+    }
+
+
+    toArray () {
+        return [
+            this.x,
+            this.y,
+            this.z
+        ];
     }
 
 
