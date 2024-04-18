@@ -1,51 +1,8 @@
-const Position3D = require("..");
+const Position3D = require("../src");
 
 
 test(
-    `Position3D.constructor()`,
-    () => {
-        const position = new Position3D(1, 2, 3);
-
-        expect(position.x).toBe(1);
-        expect(position.y).toBe(2);
-        expect(position.z).toBe(3);
-    }
-);
-
-
-test(
-    `Position3D.clone()`,
-    () => {
-        const position = new Position3D(1, 23, 345).clone();
-
-        expect(position.x).toBe(1);
-        expect(position.y).toBe(23);
-        expect(position.z).toBe(345);
-    }
-);
-
-
-test(
-    `Position3D.copy()`,
-    () => {
-        const position = new Position3D(1, 23, 345);
-        const copy = new Position3D();
-
-        Position3D.copy(position, copy);
-
-        expect(position.x).toBe(1);
-        expect(position.y).toBe(23);
-        expect(position.z).toBe(345);
-
-        expect(copy.x).toBe(position.x);
-        expect(copy.y).toBe(position.y);
-        expect(copy.z).toBe(position.z);
-    }
-);
-
-
-test(
-    `Position3D.from(data: boolean)`,
+    `Position3D::from(data: boolean)`,
     () => {
         const position = Position3D.from(true);
 
@@ -57,7 +14,7 @@ test(
 
 
 test(
-    `Position3D.from(data: number)`,
+    `Position3D::from(data: number)`,
     () => {
         const position = Position3D.from(42.0);
 
@@ -69,7 +26,7 @@ test(
 
 
 test(
-    `Position3D.from(data: object)`,
+    `Position3D::from(data: object)`,
     () => {
         const position = Position3D.from(
             {
@@ -87,7 +44,7 @@ test(
 
 
 test(
-    `Position3D.from(data: string) - number`,
+    `Position3D::from(data: string<number>)`,
     () => {
         const positionNumber = Position3D.from("42");
 
@@ -99,7 +56,7 @@ test(
 
 
 test(
-    `Position3D.from(data: string) - object`,
+    `Position3D::from(data: string<object>)`,
     () => {
         const positionJSONObject = Position3D.from(
             JSON.stringify(
@@ -119,7 +76,7 @@ test(
 
 
 test(
-    `Position3D.from(data: string) - Array`,
+    `Position3D::from(data: string<Array>)`,
     () => {
         const positionJSONArray = Position3D.from(
             JSON.stringify(
@@ -139,7 +96,7 @@ test(
 
 
 test(
-    `Position3D.from(data: Array)`,
+    `Position3D::from(data: Array)`,
     () => {
         const position = Position3D.from(
             [
@@ -157,24 +114,14 @@ test(
 
 
 test(
-    `Position3D.one()`,
+    `Position3D::from(data: Position3D)`,
     () => {
-        const position = Position3D.one();
+        const position = Position3D.from(
+            new Position3D(16, 32, 64)
+        );
 
-        expect(position.x).toBe(1);
-        expect(position.y).toBe(1);
-        expect(position.z).toBe(1);
-    }
-);
-
-
-test(
-    `Position3D.zero()`,
-    () => {
-        const zero = Position3D.zero();
-
-        expect(zero.x).toBe(0);
-        expect(zero.y).toBe(0);
-        expect(zero.z).toBe(0);
+        expect(position.x).toBe(16);
+        expect(position.y).toBe(32);
+        expect(position.z).toBe(64);
     }
 );
