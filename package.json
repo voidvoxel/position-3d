@@ -1,6 +1,6 @@
 {
   "name": "@voidvoxel/position-3d",
-  "version": "0.1.2-alpha.3",
+  "version": "0.1.2",
   "description": "A position in 3D space",
   "main": "src/index.js",
   "scripts": {
