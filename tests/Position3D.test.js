@@ -18,9 +18,9 @@ test(
     () => {
         const position = Position3D.one();
 
-        expect(position.x).toBe(0);
-        expect(position.y).toBe(0);
-        expect(position.z).toBe(0);
+        expect(position.x).toBe(1);
+        expect(position.y).toBe(1);
+        expect(position.z).toBe(1);
     }
 );
 
