@@ -14,6 +14,18 @@ test(
 
 
 test(
+    `Position3D.one()`,
+    () => {
+        const position = Position3D.one();
+
+        expect(position.x).toBe(0);
+        expect(position.y).toBe(0);
+        expect(position.z).toBe(0);
+    }
+);
+
+
+test(
     `Position3D.zero()`,
     () => {
         const zero = Position3D.zero();
