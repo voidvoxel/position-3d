@@ -19,6 +19,11 @@ class Position3D {
     }
 
 
+    clone () {
+        return Position3D.from(this);
+    }
+
+
     from (position) {
         if (typeof position === 'undefined' || position === null) {
             position = 0.0;

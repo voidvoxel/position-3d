@@ -14,6 +14,18 @@ test(
 
 
 test(
+    `Position3D.clone()`,
+    () => {
+        const position = new Position3D(1, 23, 345).clone();
+
+        expect(position.x).toBe(1);
+        expect(position.y).toBe(23);
+        expect(position.z).toBe(345);
+    }
+);
+
+
+test(
     `Position3D.from(data: boolean)`,
     () => {
         const position = Position3D.from(true);
