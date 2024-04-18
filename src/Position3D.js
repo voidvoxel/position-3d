@@ -1,4 +1,9 @@
 class Position3D {
+    static one () {
+        return new Position3D(1);
+    }
+
+
     static zero () {
         return new Position3D(0);
     }
