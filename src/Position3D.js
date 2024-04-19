@@ -153,6 +153,7 @@ class Position3D {
 
     /**
      * Populate the values of this `Position3D` using the provided arguments.
+     * @private
      * @param {number} x The x coordinate.
      * @param {number} y The y coordinate.
      * @param {number} z The z coordinate.
